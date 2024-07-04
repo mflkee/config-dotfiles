@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Интерфейс сети
-interface="enp12s0"
+interface=$(ip route | grep default | awk '{print \$5}' | head -n 1)
 
 # Получаем текущие значения трафика
 rx_old=$(cat /sys/class/net/"$interface"/statistics/rx_bytes)
