@@ -123,18 +123,6 @@ super + ctrl + shift + space
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-#!/bin/bash
-
-# Проверить, запущена ли запись
-if pgrep -f "ffmpeg -f x11grab -i :0.0 -r 30 -vcodec libx264 -acodec libmp3lame -y" > /dev/null; then
-  # Запись запущена, остановить ее
-  pkill -f "ffmpeg -f x11grab -i :0.0 -r 30 -vcodec libx264 -acodec libmp3lame -y"
-  echo "Запись остановлена!"
-else
-  # Запись не запущена, запустить ее
-  ffmpeg -f x11grab -i :0.0 -r 30 -vcodec libx264 -acodec libmp3lame -y "/home/mflkee/video/record/record_$(date +%Y-%m-%d_%H-%M-%S).mp4" &
-  echo "Запись началась!"
-fi
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
@@ -145,7 +133,7 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 # screanshot
 super + shift + s
-	~/screenshot.sh
+	~/scripts/screenshot.sh
 
 # record
 super + shift + r
