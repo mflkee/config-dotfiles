@@ -1,7 +1,22 @@
 #!/bin/bash
 
-# Интерфейс сети
-interface=$(ip route | grep default | awk '{print \$5}' | head -n 1)
+# Получаем список всех сетевых интерфейсов и их состояния
+interfaces=$(ip link | awk '/state UP/ {print $2}' | tr -d ':')
+
+# Выбираем первый активный интерфейс из списка
+interface=$(echo "$interfaces" | head -n 1)
+
+# Проверяем, найден ли интерфейс
+if [ -z "$interface" ]; then
+    echo "Активный сетевой интерфейс не найден."
+    exit 1
+fi
+
+# Получаем текущие значения трафика
+rx_old=$(cat /sys/class/net/"$interface"/statistics/rx_bytes)
+tx_old=$(cat /sys/class/net/"$interface"/statistics/tx_bytes)
+
+sleep 1 # Ждем 1 секунду
 
 # Получаем текущие значения трафика
 rx_old=$(cat /sys/class/net/"$interface"/statistics/rx_bytes)
