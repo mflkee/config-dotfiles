@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Получаем текущий расклад клавиатуры
-layout=$(xset -q | grep -A 0 'LED' | awk '{ print $NF }')
+layout=$(xset -q | grep -A 0 'LED' | awk '{ print $10 }')
 
 # Определяем активный расклад на основе светодиодного состояния клавиатуры
 if [ "$layout" -eq 00000000 ]; then
