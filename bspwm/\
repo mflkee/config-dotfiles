@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Цвета и шрифты
+BG_COLOR="FFFF"
+FG_COLOR="#EEE"
+CURRENT_WS_COLOR="#F00" # Цвет для текущего рабочего стола
+FONT1="Hack Nerd Font:size=10"
+FONT2="Font Awesome 6 Free:size=10"
+
+# Функция для отображения списка рабочих столов и текущего рабочего стола
+workspaces() {
+  local ws=""
+  local focused_ws=$(bspc query -D -d focused --names)
+  while read -r name; do
+    if [ "$name" = "$focused_ws" ]; then
+      ws+="%{F$CURRENT_WS_COLOR}${name}%{F-} " # Изменение цвета для текущего рабочего стола
+    else
+      ws+="%{F#FFF}${name}%{F-} "
+    fi
+  done <<< "$(bspc query -D --names)"
+  echo "$ws"
+}
+
+# Функция отображения времени
+clock() {
+  date "+%Y-%m-%d %H:%M"
+}
+
+# Функция отображения Wi-Fi значка
+wifi() {
+  local status=$(nmcli -t -f WIFI g)
+  if [ "$status" = "enabled" ]; then
+    echo "%{A:nmtui:}%{F#FFF} Connected%{F-}%{A}"
+  else
+    echo "%{A:nmtui:}%{F#FFF} Disconnected%{F-}%{A}"
+  fi
+}
+
+# Запускаем основной цикл скрипта
+while true; do
+  buf="%{l}$(workspaces) %{c}$(clock) %{r}$(wifi)"
+  echo "$buf"
+  sleep 0.1 # Уменьшаем или увеличиваем значение за нужное время обновления
+done | lemonbar -p -g x24 -B "$BG_COLOR" -F "$FG_COLOR" -f "$FONT1" -f "$FONT2" | sh
