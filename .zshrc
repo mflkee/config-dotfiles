@@ -117,6 +117,7 @@ alias top="gtop"
 alias ps="procs"
 alias cd="z"
 alias szsh="source ~/.zshrc"
+alias sysoff="sudo shutdown now"
 
 #config
 alias cfgzsh="nvim ~/.zshrc"
