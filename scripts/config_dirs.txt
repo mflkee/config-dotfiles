@@ -1,0 +1,13 @@
+bspwm
+sxhkd
+polybar
+alacritty
+neofetch
+redshift
+ranger
+bluetuith
+nvim
+libreoffice
+.fonts
+wallpaper
+.icons
