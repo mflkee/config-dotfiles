@@ -75,8 +75,10 @@ plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 # export MANPATH="/usr/local/man:$MANPATH"
+export PATH="/home/mflkee/.local/bin:$PATH"
+export LUA_PATH="$HOME/.luarocks/share/lua/5.4/?.lua;$HOME/.luarocks/share/lua/5.4/?/init.lua;;"
+export LUA_CPATH="$HOME/.luarocks/lib/lua/5.4/?.so;;"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
