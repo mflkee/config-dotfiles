@@ -20,7 +20,7 @@ XF86AudioMute
 
 # Сменить выход на другой
 super + XF86AudioMute
-	~/scripts/sound-change.sh
+	~/dotfiles/scripts/sound-change.sh
 
 
 # program launcher
