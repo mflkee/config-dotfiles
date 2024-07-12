@@ -130,6 +130,7 @@ alias cfgnvim="cd ~/.config/nvim"
 #venv alias
 alias vd="deactivate"
 alias vds="source ~/study/DS/venv_ds/bin/activate"
+alias vs="source venv/bin/activate"
 
 
 #lock screen
