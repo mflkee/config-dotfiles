@@ -11,3 +11,4 @@ libreoffice
 .fonts
 wallpaper
 .icons
+scripts
