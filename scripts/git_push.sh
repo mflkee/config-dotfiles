@@ -8,12 +8,24 @@ git_operations() {
 
     # Сохраняем локальные изменения
     git stash
+    if [ $? -ne 0 ]; then
+        echo "Ошибка при выполнении git stash"
+        exit 1
+    fi
 
     # Синхронизируем изменения с удаленным репозиторием
     git pull --rebase origin $branch
+    if [ $? -ne 0 ]; then
+        echo "Ошибка при выполнении git pull --rebase"
+        exit 1
+    fi
 
     # Восстанавливаем локальные изменения
     git stash pop
+    if [ $? -ne 0 ]; then
+        echo "Ошибка при выполнении git stash pop"
+        exit 1
+    fi
 
     # Проверяем наличие изменений
     if [ -n "$(git status --porcelain)" ]; then
@@ -25,7 +37,15 @@ git_operations() {
 
     # Синхронизируем локальные изменения с удаленным репозиторием
     git pull --rebase origin $branch
+    if [ $? -ne 0 ]; then
+        echo "Ошибка при выполнении git pull --rebase"
+        exit 1
+    fi
     git push origin $branch
+    if [ $? -ne 0 ]; then
+        echo "Ошибка при выполнении git push"
+        exit 1
+    fi
 }
 
 # Сохраняем текущую ветку
