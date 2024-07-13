@@ -1,5 +1,5 @@
 #!/bin/bash
-
+cd ~/dotfiles/scripts/
 # Функция для выполнения git команд
 git_operations() {
     branch=$1
