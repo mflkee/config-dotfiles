@@ -144,10 +144,3 @@ super + shift + s
 # record
 super + shift + r
 	~/.config/sxhkd/scripts/record.sh
-
-# GIT hooks ---------------------------------------------------------------------------------------
-super + alt + p
-	alacritty -e ~/.config/scripts/git_push.sh notebook
-
-super + alt + b
-	alacritty -e ~/.config/scripts/git_push.sh both
