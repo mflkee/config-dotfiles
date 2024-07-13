@@ -146,7 +146,7 @@ super + shift + r
 	~/.config/sxhkd/scripts/record.sh
 
 # GIT hooks ---------------------------------------------------------------------------------------
-super + alt + n
+super + alt + p
 	alacritty -e ~/.config/scripts/git_push.sh notebook
 
 super + alt + b
