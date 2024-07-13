@@ -146,9 +146,3 @@ super + shift + s
 super + shift + r
 	~/.config/sxhkd/scripts/record.sh
 
-# GIT hooks ---------------------------------------------------------------------------------------
-super + alt + p
-	alacritty -e ~/.config/scripts/git_push.sh desktop
-
-super + alt + b
-	alacritty -e ~/.config/scripts/git_push.sh both
