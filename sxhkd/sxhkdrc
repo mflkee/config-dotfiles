@@ -149,3 +149,5 @@ super + shift + r
 super + alt + n
 	alacritty -e ~/.config/scripts/git_push.sh notebook
 
+super + alt + b
+	alacritty -e ~/.config/scripts/git_push.sh both
