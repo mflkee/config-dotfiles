@@ -1,6 +1,7 @@
 #
 # wm independent hotkeys
 #
+#Проверка на desktop
 
 # terminal emulator
 super + Return
