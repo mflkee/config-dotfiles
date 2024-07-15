@@ -19,10 +19,10 @@ link_config_dirs() {
   for dir in $(cat config_dirs.txt); do
     # Проверяем, существует ли директория в ~/.config и является ли она символической ссылкой
     if [ -d "$CONFIG_REPO/$dir" ]; then
-      if [ -L ~/.config/"$dir" ]; то
+      if [ -L ~/.config/"$dir" ]; then
         # Удаляем существующую символическую ссылку, если она есть
         rm -f ~/.config/"$dir"
-      elif [ -d ~/.config/"$dir" ]; то
+      elif [ -d ~/.config/"$dir" ]; then
         # Если это директория, но не ссылка, переименовываем её для бэкапа
         mv ~/.config/"$dir" ~/.config/"$dir".backup
       fi
