@@ -19,10 +19,10 @@ link_config_dirs() {
   for dir in $(cat config_dirs.txt); do
     # Проверяем, существует ли директория в ~/.config и является ли она символической ссылкой
     if [ -d "$CONFIG_REPO/$dir" ]; then
-      if [ -L ~/.config/"$dir" ]; then
+      if [ -L ~/.config/"$dir" ]; то
         # Удаляем существующую символическую ссылку, если она есть
         rm -f ~/.config/"$dir"
-      elif [ -d ~/.config/"$dir" ]; then
+      elif [ -d ~/.config/"$dir" ]; то
         # Если это директория, но не ссылка, переименовываем её для бэкапа
         mv ~/.config/"$dir" ~/.config/"$dir".backup
       fi
@@ -32,6 +32,10 @@ link_config_dirs() {
       echo "Директория $dir не найдена в репозитории dotfiles."
     fi
   done
+  # Создаем символическую ссылку для конфигурации Neovim в /root
+  if [ -d "$CONFIG_REPO/nvim" ]; then
+    sudo ln -sfn "$CONFIG_REPO/nvim" /root/.config/nvim
+  fi
 }
 
 # Функция для создания символических ссылок для отдельных файлов
