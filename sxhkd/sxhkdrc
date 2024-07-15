@@ -139,7 +139,7 @@ super + {Left,Down,Up,Right}
 
 # screanshot
 super + shift + s
-	~/scripts/screenshot.sh
+	~/.config/scripts/screenshot.sh
 
 # record
 super + shift + r
