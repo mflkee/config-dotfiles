@@ -33,3 +33,14 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set({ 'i', 'n' }, '<m-i>', '<esc>i```{python}<cr>```<esc>O', { desc = '[i]nser code chunk' })
 vim.keymap.set({ 'n' }, '<leader>ci', ':split term://ipython<cr>', { desc = 'split terminal' })
+
+-- set buffer
+vim.keymap.set('n', 'b[', ':bprev<CR>', { desc = 'Go to previous buffer' })
+vim.keymap.set('n', 'b]', ':bnext<CR>', { desc = 'Go to next buffer' })
+vim.keymap.set('n', 'bx', ':bdelete<CR>', { desc = 'Close current buffer' })
+vim.keymap.set('n', 'bc', function()
+  local input = vim.fn.input 'Enter file name: '
+  if input ~= '' then
+    vim.cmd('edit ' .. input)
+  end
+end, { desc = 'Create and open new file' })
