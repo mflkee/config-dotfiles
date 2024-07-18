@@ -4,7 +4,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 xrandr --output DP-0 --mode 1920x1080 --rate 143.85
 feh --bg-fill ~/dotfiles/wallpaper/video-games-retro-games-anime-cartoon-wallpaper-b826dc4aef3c17699e1079b222394b80.jpg
 default_font="Hack Nerd Font Mono"
-redshift &
+# redshift &
 udiskie &
 $HOME/.config/polybar/launch.sh
 
