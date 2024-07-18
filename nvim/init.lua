@@ -23,7 +23,7 @@ require('lazy').setup({
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
   { import = 'mflkee.plugins' },
-  { import = 'mflkee.colorscheme.moonfly' },
+  { import = 'mflkee.colorscheme.tokyonight' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

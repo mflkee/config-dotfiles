@@ -25,7 +25,7 @@ super + XF86AudioMute
 
 # program launcher
 super + space
-	dmenu_run -b -nb '#0D0C0C' -nf '#C4746E' -sb '#C5C9C5' -sf '#0D0C0C'
+	dmenu_run -b -nb '#1a1b26' -nf '#e0af68' -sb '#c0caf5' -sf '#15161e'
 
 # make sxhkd reload its configuration files:
 super + Escape
