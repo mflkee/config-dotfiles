@@ -46,6 +46,7 @@ link_individual_files() {
   ln -sfn $CONFIG_REPO/user-dirs.locale ~/user-dirs.locale
   ln -sfn $CONFIG_REPO/user-dirs.dirs ~/user-dirs.dirs
   ln -sfn $CONFIG_REPO/.fonts ~/.fonts
+  ln -sfn $CONFIG_REPO/.zsh_tokyonight_dark.zsh ~/.zsh_tokyonight_dark.zsh
   
   # Добавьте здесь другие файлы, если необходимо
 }
