@@ -55,6 +55,4 @@ export XSECURELOCK_DIM_FPS=60
 
 eval "$(zoxide init zsh)"
 
-# Load TokyoNight theme
-echo "Loading TokyoNight Night theme for zsh-syntax-highlighting"
 source ~/.zsh_tokyonight_dark.zsh
