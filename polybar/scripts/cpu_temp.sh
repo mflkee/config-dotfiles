@@ -1,6 +1,7 @@
 #!/bin/bash
 
-temp=$(sensors | grep 'Tctl' | awk '{print $2}' | sed 's/[^0-9.]//g')
+# Извлекаем температуру из строки Package id 0
+temp=$(sensors | grep 'Package id 0' | awk '{print $4}' | sed 's/[^0-9.]//g')
 temp=${temp%.*}  # Удаляем десятичную часть
 
 # Определение цветов
@@ -15,7 +16,3 @@ elif [[ "$temp" -ge 60 ]]; then
 else
   echo "%{F$COLOR1}$temp°C%{F-}"
 fi
-# ; Цвета для текста и фона
-# color2 = #8A9A7B до 60
-# color9 = #E46876 после 80 и выше 
-# color11 = #E6C384 после 60 и до 80
