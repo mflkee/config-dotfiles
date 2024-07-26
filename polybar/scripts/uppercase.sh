@@ -6,10 +6,10 @@ layout=$(xset -q | grep -A 0 'LED' | awk '{ print $10 }')
 # Определяем активный расклад на основе светодиодного состояния клавиатуры
 if [ "$layout" -eq 00000000 ]; then
   lang="US"
-  color="%{F#0000FF}"
+  color="%{F#7aa2f7}"
 else
   lang="RU"
-  color="%{F#FF0000}"
+  color="%{F#f7768e}"
 fi
 
 # Используем %{T3}% для указания шрифта font-2 из вашей конфигурации polybar
