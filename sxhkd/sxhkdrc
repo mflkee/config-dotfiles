@@ -22,6 +22,11 @@ XF86AudioMute
 super + XF86AudioMute
 	~/dotfiles/scripts/sound-change.sh
 
+# Toggle microphone mute
+XF86AudioMicMute
+    amixer set Capture toggle
+
+
 
 # program launcher
 super + space

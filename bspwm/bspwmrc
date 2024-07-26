@@ -3,7 +3,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 xrandr --output DP-0 --mode 1920x1080 --rate 143.85
 feh --bg-fill --randomize ~/dotfiles/wallpaper/*
-redshift &
+#redshift &
 udiskie &
 $HOME/.config/polybar/launch.sh
 
