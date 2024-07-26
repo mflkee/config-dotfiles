@@ -36,6 +36,9 @@ super + space
 super + Escape
 	pkill -USR1 -x sxhkd
 
+#firefox
+super + b
+	firefox
 #
 # bspwm hotkeys
 #
