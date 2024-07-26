@@ -5,6 +5,7 @@ xrandr --output DP-0 --mode 1920x1080 --rate 143.85
 feh --bg-fill --randomize ~/dotfiles/wallpaper/*
 redshift &
 udiskie &
+
 $HOME/.config/polybar/launch.sh
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9
@@ -24,3 +25,5 @@ bspc config presel_feedback_color "#7aa2f7"
 
 bspc config focus_follows_pointer true
 bspc config pointer_modifier    super
+
+bspc config pointer_cursor Simp1e-Tokyo-Night
