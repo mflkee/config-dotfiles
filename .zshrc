@@ -2,7 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load
-ZSH_THEME="xiong-chiamiov-plus"
+ZSH_THEME="ys"
 
 # Plugins
 plugins=(git zsh-syntax-highlighting)
